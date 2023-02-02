@@ -1,0 +1,107 @@
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.header .container .left,
+.header .container .left .title {
+    display: flex;
+    align-items: center;
+}
+.header .container .left .title{
+    gap: 10px;
+}
+.header .container .left{
+    gap: 10px;
+}
+.header .container .left img{
+    height: 60px;
+}
+
+.header .container .left h1 {
+    font-size: 30px;
+}
+
+.header .container nav {
+    display: flex;
+    align-items: stretch;
+}
+
+.header .container nav div {
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header nav a{
+    text-decoration: none;
+    color: black;
+}
+
+.header .container nav div:hover {
+    background-color: #e6e6e6;
+    color: var(--main-color);
+}
+
+.sub-menu{
+    display: none;
+    font-size: 30px;
+    padding:0 5px;
+    align-self: center;
+    border: 3px solid var(--main-color);
+    border-radius: 6px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* Medium */
+@media (max-width: 992px) {
+    .header .container {
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+    }
+    .header .container .left{
+        margin-top: 10px;
+    }
+    .header .container nav{
+        margin-top: 5px;
+    }
+    .header .container nav div{
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        align-items: stretch;
+        border-bottom: 3px solid #d8d8d8;  
+        height: fit-content; 
+    }
+    
+    .header .container .left{
+        justify-content: space-between;
+    }
+    .sub-menu{
+        display: block;
+    }
+    .header .container nav{
+        flex-direction: column;
+        height: 0;
+        transition: var(--main-transition);
+        overflow: hidden;
+    }
+    .header .container nav.active{
+        height: calc(3 * 60px);
+    }
+    
+    .header .container nav div{
+        text-align: left;
+        height: 60px;
+    }
+}
