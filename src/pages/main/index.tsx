@@ -100,7 +100,7 @@ export function TextFun() {
 export default function Main() {
     return (
         <>
-            <YoutubeResult />
+            
             <TextFun />
         </>
     );

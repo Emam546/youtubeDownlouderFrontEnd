@@ -12,7 +12,7 @@ export default function Header() {
                     href="#"
                 >
                     <img
-                        src="./images/logo.png"
+                        src="/images/logo.png"
                         className="tw-w-12 d-inline-block tw-mr-2 align-text-center"
                         alt="logo"
                     />
