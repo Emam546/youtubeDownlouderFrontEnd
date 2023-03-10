@@ -25,10 +25,10 @@ function MapDataVideo(video: videoFormat, i: number) {
     if (!parseInt(video.contentLength)) return null;
     return (
         <tr key={i}>
-            <td>
+            <td className="flex-shrink-1">
                 {video.qualityLabel} (.{video.container})
                 {!video.hasAudio && (
-                    <span className="bg-danger text-white mx-2 tw-px-1 tw py-1">NO AUDIO</span>
+                    <span className="label bg-danger">NO AUDIO</span>
                 )}
             </td>
             <td>{formatBytes(parseInt(video.contentLength), 0)}</td>
@@ -43,7 +43,7 @@ function MapDataVideo(video: videoFormat, i: number) {
                         className="btn btn-success"
                     >
                         <i className="fa-solid fa-download"></i>
-                        Download
+                        <span>Download</span>
                     </button>
                 </a>
             </td>
@@ -70,7 +70,7 @@ function MapDataAudio(video: videoFormat, i: number) {
                         className="btn btn-success"
                     >
                         <i className="fa-solid fa-download"></i>
-                        Download
+                        <span>Download</span>
                     </button>
                 </a>
             </td>
@@ -111,7 +111,7 @@ export default function YoutubeResult() {
         return parseInt(b.contentLength) - parseInt(a.contentLength);
     });
     return (
-        <section className="download-result overflow-hidden">
+        <section className="download-result">
             <div className="row">
                 <div className="col-md-4">
                     <div>

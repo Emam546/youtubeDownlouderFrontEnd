@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ResultData } from "youtube-searches";
 import { videoInfo } from "ytdl-core";
-const domain = "http://localhost:3000";
+const domain = "https://youtube-playlists.onrender.com";
 export async function getSearchData(search: string): Promise<ResultData> {
     const res = await axios.get(`${domain}/api/search?search_query=${search}`);
     return res.data.data;
